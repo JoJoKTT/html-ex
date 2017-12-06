@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>常用連結</title>
+    <title>首頁</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,6 +43,7 @@
 </head>
 <body>
 
+
 <div class="container">
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
@@ -64,19 +65,40 @@
                 <li><a href="reference.html">參考期刊</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="db_con_inc.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="loginmodal-container">
+                            <h1>Login to Your Account</h1><br>
+                            <form action="actionlogin.php" method="POST">
+                                <input type="text" name="user" placeholder="Username">
+                                <input type="password" name="pass" placeholder="Password">
+                                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                                <input type="hidden" name="refer" value="<?php echo (isset($_GET['refer'])) ? $_GET['refer'] : 'index.php'; ?>">
+                            </form>
+
+                            <div class="login-help">
+                                <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </ul>
         </div>
     </nav>
 </div>
 
-<div class="container text-center">
-    <div class="col-sm-12 text-center">
-        <h1>Welcome</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <hr>
-        <h3>Test</h3>
-        <p>Lorem ipsum...</p>
+<div class="container-fluid text-center">
+    <div class="container">
+        <div class="col-sm-9 text-center">
+            <h1>王經篤</h1>
+            <h2>亞洲大學</h2>
+            <h3>資訊工程系</h3>
+            <h4>副教授</h4>
+        </div>
+        <div class="col-sm-3 text-center">
+            <img src="910100540_jdwang_2011_12_7.jpg" width="150px" height="200px">
+        </div>
     </div>
 </div>
 
