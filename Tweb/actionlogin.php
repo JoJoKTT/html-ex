@@ -1,5 +1,5 @@
 <?php
-require('db_con_inc.php');
+include('db_con_inc.php');
 
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = hash($_POST['password']);
