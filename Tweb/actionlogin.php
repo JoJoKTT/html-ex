@@ -2,10 +2,7 @@
 include('db_con_inc.php');
 
 $email = $_POST['email'];
-<<<<<<< HEAD
-$password = hash($_POST['password']);
-=======
-$password =hash("sha256", $_POST['password']);
+$password = sha1($_POST['password']);
 
 $sql = "SELECT * FROM member_table where username = '$id'";
 $result = mysqli_query($sql);
@@ -25,4 +22,3 @@ else
     echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
 }
 ?>
->>>>>>> a5a43951549e3802db4d677e921deddb0be2f355
