@@ -2,7 +2,7 @@
 include('db_con_inc.php');
 
 $email = $_POST['email'];
-$password =hash("sha256", $_POST['password']);
+$password = sha1($_POST['password']);
 
 $sql = "SELECT * FROM member_table where username = '$id'";
 $result = mysqli_query($sql);
