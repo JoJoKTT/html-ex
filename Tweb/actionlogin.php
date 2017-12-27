@@ -1,24 +1,55 @@
 <?php
-include('db_con_inc.php');
+require('db_con_inc.php');
 
 $email = $_POST['email'];
 $password = sha1($_POST['password']);
+$refer = $_POST['refer'];
 
-$sql = "SELECT * FROM member_table where username = '$id'";
-$result = mysqli_query($sql);
-$row = @mysqli_fetch_row($result);
-//判斷帳號與密碼是否為空白
-//以及MySQL資料庫裡是否有這個會員
-if($id != null && $pw != null && $row[1] == $id && $row[2] == $pw)
+if ($email == '' || $password == '')
 {
-    //將帳號寫入session，方便驗證使用者身份
-    $_SESSION['username'] = $id;
-    echo '登入成功!';
-    echo '<meta http-equiv=REFRESH CONTENT=1;url=index1.php>';
+    // No login information
+    header('Location: login.php?refer='. urlencode($_POST['refer']));
 }
 else
 {
-    echo '登入失敗!';
-    echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
+    // Authenticate user
+    $con = mysqli_connect($db_host, $db_user, $db_pass);
+    mysqli_select_db($db_name, $con);
+
+    $query = "SELECT userid, sha1(UNIX_TIMESTAMP() + userid + RAND(UNIX_TIMESTAMP()))
+        guid FROM susers WHERE email = '$email' AND password = password('$password')";
+
+    $result = mysqli_query($query, $con)
+    or die ('Error in query');
+
+    if (mysqli_num_rows($result))
+    {
+        $row = mysqli_fetch_row($result);
+        // Update the user record
+        $query = "UPDATE susers SET guid = '$row[1]' WHERE userid = $row[0]";
+
+        mysqli_query($query, $con)
+        or die('Error in query');
+
+        // Set the cookie and redirect
+        // setcookie( string name [, string value [, int expire [, string path
+        // [, string domain [, bool secure]]]]])
+        // Setting cookie expire date, 6 hours from now
+        $cookieexpiry = (time() + 21600);
+        setcookie("session_id", $row[1], $cookieexpiry);
+
+        if (empty($refer) || !$refer)
+        {
+            $refer = 'index.php';
+        }
+
+        header('Location: '. $refer);
+    }
+    else
+    {
+        // Not authenticated
+        header('Location: login.php?refer='. urlencode($refer));
+    }
 }
+
 ?>
