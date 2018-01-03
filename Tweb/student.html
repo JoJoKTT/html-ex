@@ -15,7 +15,9 @@
         }
 
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {height: 450px}
+        .row.content {
+            height: 450px
+        }
 
         /* Set gray background color and 100% height */
         .sidenav {
@@ -37,7 +39,10 @@
                 height: auto;
                 padding: 15px;
             }
-            .row.content {height:auto;}
+
+            .row.content {
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -55,11 +60,11 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">首頁</a></li>
+                <li><a href="index.html">首頁</a></li>
                 <li><a href="resume.html">簡歷</a></li>
                 <li><a href="subject.html">學術</a></li>
                 <li><a href="book.html">著作</a></li>
-                <li><a href="student.html">學生</a></li>
+                <li class="active"><a href="student.html">學生</a></li>
                 <li><a href="link.html">常用連結</a></li>
                 <li><a href="reference.html">參考期刊</a></li>
             </ul>
@@ -72,18 +77,185 @@
 
 <div class="container text-center">
     <div class="col-sm-12 text-center">
-        <h1>Welcome</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>學年度</td>
+                    <td>系所</td>
+                    <td>姓名</td>
+                    <td>論文題目</td>
+                    <td>備註</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>資訊工程所 (博士班)</td>
+                    <td>Heri Wijayanto</td>
+                    <td></td>
+                    <td>(Indonesia)</td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>資訊工程所</td>
+                    <td>陳彥棠</td>
+                    <td>提升 Hadoop MapReduce 計算效能之研究-以抽取樣式歷史為例<br>
+                        (Promoting the Computational Performance of Hadoop MapReduce for Pattern History Extraction)
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>資訊工程所</td>
+                    <td>蔣中凱</td>
+                    <td>樣式歷史資料之形狀查詢-藉由Haar小波<br>
+                        (Shape Query for Pattern History via Haar Wavelet)
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>資訊工程所</td>
+                    <td>郭佳霖</td>
+                    <td>社群網站使用者上線時段分析-以批踢踢為例</td>
+                    <td>(2014.6畢業)(102學年度)</td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td>資訊工程所</td>
+                    <td>吳健瑋</td>
+                    <td>利用 Hadoop 建立樣式歷史資料趨勢索引</td>
+                    <td>(2014.6畢業)(102學年度)</td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td>資訊工程所</td>
+                    <td>許柏凱</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>97</td>
+                    <td>資訊工程所</td>
+                    <td>施耀竣</td>
+                    <td>分類架構模糊度研究-利用鄰近點亂度</td>
+                    <td>(2010.6畢業)(98學年度)</td>
+                </tr>
+                <tr>
+                    <td>97</td>
+                    <td>生物資訊所</td>
+                    <td>黃進福</td>
+                    <td>病毒分類研究-藉由基因體序列</td>
+                    <td>(2011.6畢業)(99學年度)</td>
+                </tr>
+                <tr>
+                    <td>97</td>
+                    <td>資訊工程所</td>
+                    <td>Arie Budiansyah</td>
+                    <td>Text Trend Analysis from Indonesia Newspaper</td>
+                    <td>(2010.6畢業)(98學年度)(Indonesia)</td>
+                </tr>
+                <tr>
+                    <td>96</td>
+                    <td>電腦與通訊所</td>
+                    <td>廖益緯</td>
+                    <td>關鍵字之趨勢研究-藉由PubMed文獻</td>
+                    <td>(2010.6畢業)(98學年度)</td>
+                </tr>
+                <tr>
+                    <td>96</td>
+                    <td>資訊工程所</td>
+                    <td>劉宣榮</td>
+                    <td>中華民國專利趨勢查詢-藉由顯要事件歷史</td>
+                    <td>(2010.6畢業)(98學年度)</td>
+                </tr>
+                <tr>
+                    <td>95</td>
+                    <td>資訊工程所</td>
+                    <td>盧勇凱</td>
+                    <td>病毒分類研究-藉由CDS序列</td>
+                    <td>(2011.6畢業)(99學年度)</td>
+                </tr>
+                <tr>
+                    <td>95</td>
+                    <td>生物資訊所</td>
+                    <td>許瀚升</td>
+                    <td>水稻T-DNA插入突變體右翼序列自動化比對系統之建立</td>
+                    <td>(2008.6畢業)(96學年度)</td>
+                </tr>
+                <tr>
+                    <td>95</td>
+                    <td>生物資訊所</td>
+                    <td>魏子傑</td>
+                    <td>癌症類別關連研究-藉由生物晶片分析</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>94</td>
+                    <td>生物資訊所</td>
+                    <td>沈晉億</td>
+                    <td>古菌與甲烷代謝有關之獨特胺基酸序列的挖掘--藉由基因體比較</td>
+                    <td>(2008.1畢業)(96學年度)</td>
+                </tr>
+                <tr>
+                    <td>93</td>
+                    <td>生物資訊所</td>
+                    <td>張文福</td>
+                    <td>古菌基因體相關於氧氣需求的研究</td>
+                    <td>(2007.6畢業)(95學年度)</td>
+                </tr>
+                <tr>
+                    <td>93</td>
+                    <td>生物資訊所</td>
+                    <td>鄒佳芳</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>92</td>
+                    <td>資訊工程所</td>
+                    <td>曾冠燕</td>
+                    <td>生物資訊文獻查詢-利用文件相似度</td>
+                    <td>(2008.1畢業)(96學年度)</td>
+                </tr>
+                <tr>
+                    <td>92</td>
+                    <td>資訊工程所</td>
+                    <td>楊季剛</td>
+                    <td>中文新聞相關性事件之挖掘-藉由Haar小波轉換</td>
+                    <td>(2007.1畢業)(95學年度)</td>
+                </tr>
+                <tr>
+                    <td>92</td>
+                    <td>生物資訊所</td>
+                    <td>林炯璁</td>
+                    <td>臨床微生物檢驗的資料挖掘研究－以偵測鮑氏不動桿菌之院內感染為例</td>
+                    <td>(2006.6畢業)(94學年度)</td>
+                </tr>
+            </table>
+        </div>
         <hr>
-        <h3>Test</h3>
-        <p>Lorem ipsum...</p>
+        <ul style="list-style: disc;text-align: left">
+            <li>3D影像軌跡追蹤與預測系統(Java)</li>
+            <li><a href="http://asia.edu.tw/~jdwang/StudentProjects/LinearClassifierSystem.htm" target="_blank">線性分類器系統開發(Java)</a></li>
+            <li>網路流行話語擷取系統(Java)-『丁丁』是一個人才！？</li>
+            <li><a href="http://dns2.asia.edu.tw/~jdwang/StudentProjects/ProjectDevelop.htm" target="_blank">專案開發</a></li>
+            <li style="list-style: none"><a href="http://dns2.asia.edu.tw/~jdwang/TeachingCourses/PaperStudy.htm" target="_blank">PaperStudy</a></li>
+            <li style="list-style: none"><a href="http://dns2.asia.edu.tw/~jdwang/ThesisWriting.htm" target="_blank">Thesis or Report</a></li>
+            <ul style="list-style: circle">
+                <li><a href="http://www.cs.nthu.edu.tw/~cherung/teaching/2009cs5321/link/latex.pdf" target="_blank">Latex教學</a></li>
+                <li>some useful LaTeX related resources:</li>
+                <ul style="list-style: square">
+                    <li>Online Resources - <a href="http://www.tug.org/interest.html" target="_blank"></a>http://www.tug.org/interest.html</li>
+                    <li>Online LaTeX editor - <a href="http://www.scribtex.com/" target="_blank">http://www.scribtex.com/</a></li>
+                </ul>
+            </ul>
+        </ul>
     </div>
 </div>
 
 <footer class="container text-center">
     <p>地址：41354 台中市霧峰區柳豐路500號<br/>
         電話：04-2332-3456 ext:1847<br/>
-        FAX :  04-2332-5737<br/>
+        FAX : 04-2332-5737<br/>
         E-mail: jdwang@asia.edu.tw<br/>
         網頁：http://dns2.asia.edu.tw/~jdwang
     </p>
@@ -92,11 +264,13 @@
     Taiwan 41354.<br/>
     Tel: 886-4-2332-3456 ext. 1847<br/>
     Fax: 886-4-2330-5737<br/>
-    E-mail:  jdwang@asia.edu.tw<br/>
+    E-mail: jdwang@asia.edu.tw<br/>
     Web:http://dns2.asia.edu.tw/~jdwang
 </footer>
 
-<div class="container" style="padding: 0"><nav class="navbar navbar-inverse"></nav></div>
+<div class="container" style="padding: 0">
+    <nav class="navbar navbar-inverse"></nav>
+</div>
 
 </body>
 </html>
