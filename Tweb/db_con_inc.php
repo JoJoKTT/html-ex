@@ -1,10 +1,21 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-$link = mysqli_connect("localhost","104021046","#Toh8ohf+","104021046");
+/**
+ * Created by PhpStorm.
+ * User: user
+ * Date: 2017/12/27
+ * Time: 下午 02:41
+ */
+$db_server = "localhost";
+//資料庫名稱
+$db_name = "104021046";
+//資料庫管理者帳號
+$db_user = "104021046";
+//資料庫管理者密碼
+$db_passwd = "#Toh8ohf+";
 
-if(!$link){
-    die( "Error : Unable to connect.");
-    exit;
-}
-$link->set_charset("utf8");
+//對資料庫連線
+$connect = @mysqli_connect($db_server, $db_user, $db_passwd,$db_name);
+
+mysqli_set_charset($connect,'utf8');
+
 ?>
