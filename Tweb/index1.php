@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+<<<<<<< HEAD
 include("db_con_inc.php");
 session_start();
+=======
+if($_SESSION['username'] == null)
+{    echo '您無權限觀看此頁面!';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+    exit();
+}
+>>>>>>> 27c9dc740caa7431799c5802f2f9da5f08ffa4b6
 ?>
 <head>
     <title>首頁</title>
@@ -70,7 +78,10 @@ session_start();
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="logout.php"> Logout</a></li>
+<<<<<<< HEAD
                 <li><a href="member.php">個資</a></li>
+=======
+>>>>>>> 27c9dc740caa7431799c5802f2f9da5f08ffa4b6
             </ul>
         </div>
     </nav>

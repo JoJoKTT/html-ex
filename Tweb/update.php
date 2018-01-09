@@ -16,10 +16,17 @@ if($_SESSION['email'] != null)
     echo "<form name=\"form\" method=\"post\" action=\"update_finish.php\">";
     echo "帳號：<input type=\"text\" name=\"id\" value=\"$row[1]\" />(此項目無法修改) <br>";
     echo "密碼：<input type=\"password\" name=\"pw\" value=\"$row[2]\" /> <br>";
+<<<<<<< HEAD
     echo "再一次輸入密碼：<input type=\"passwd\" name=\"pw2\" value=\"$row[2]\" /> <br>";
     echo "電話：<input type=\"text\" name=\"phone\" value=\"$row[6]\" /> <br>";
     echo "中文名：<input type=\"text\" name=\"nameC\" value=\"$row[4]\"/> <br>";
     echo "英文名：<input type=\"text\" name=\"nameE\" value=\"$row[5]\"/> <br> <br>";
+=======
+    echo "再一次輸入密碼：<input type=\"password\" name=\"pw2\" value=\"$row[2]\" /> <br>";
+    echo "電話：<input type=\"text\" name=\"telephone\" value=\"$row[3]\" /> <br>";
+    echo "地址：<input type=\"text\" name=\"address\" value=\"$row[4]\" /> <br>";
+    echo "備註：<textarea name=\"other\" cols=\"45\" rows=\"5\">$row[5]</textarea> <br>";
+>>>>>>> 27c9dc740caa7431799c5802f2f9da5f08ffa4b6
     echo "<input type=\"submit\" name=\"button\" value=\"確定\" />";
     echo "</form>";
 }
