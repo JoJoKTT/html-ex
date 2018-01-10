@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+include("db_con_inc.php");
+session_start();
+
+if($_SESSION['email'] == null)
+{    echo '您無權限觀看此頁面!';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+    exit();
+}
+
+?>
 <head>
     <title>首頁</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/tweb.css" charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
@@ -66,7 +77,8 @@
                 <li><a href="reference.html">參考期刊</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"> Login</span></a></li>
+                <li><a href="logout.php"> Logout</a></li>
+                <li><a href="member.php">個資</a></li>
             </ul>
         </div>
     </nav>
@@ -85,10 +97,6 @@
         </div>
     </div>
 </div>
-
-<form>
-    <input type="button" value="name test" onClick="var name=prompt('名字是?','name here');alert('hi , '+name)">
-</form>
 
 <footer class="container text-center">
     <p>地址：41354 台中市霧峰區柳豐路500號<br/>
