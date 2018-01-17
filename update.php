@@ -1,7 +1,7 @@
 <?php session_start(); ?>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-include("mysql_connect.inc.php");
+include("db_con_inc.php");
 
 if($_SESSION['email'] != null)
 {
@@ -26,6 +26,6 @@ if($_SESSION['email'] != null)
 else
 {
     echo '您無權限觀看此頁面!';
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.html>';
 }
 ?>

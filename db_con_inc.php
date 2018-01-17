@@ -18,13 +18,4 @@ $connect = @mysqli_connect($db_server, $db_user, $db_passwd,$db_name);
 
 mysqli_set_charset($connect,'utf8');
 
-//$link = mysqli_connect("localhost","104021046","#Toh8ohf+","104021046");
-//
-//$db_host = 'localhost';
-//$db_user = '104021046';
-//$db_pass = '#Toh8ohf+';
-//$db_name = '104021046';
-//
-//$link->set_charset("utf8");
-
 ?>
