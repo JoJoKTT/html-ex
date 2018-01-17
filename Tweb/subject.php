@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+if(isset($_SESSION['email']) && $_SESSION['email']!=""){
+}else{
+    echo "Please Login first";
+    header("refresh:2;url=index.html");  //轉址
+    exit(); //不執行之後的程式碼
+}
+include("db_con_inc.php");
+?>
 <head>
     <title>學術</title>
     <meta charset="utf-8">
@@ -7,6 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -39,14 +50,10 @@
             }
             .row.content {height:auto;}
         }
-        ul.fs1 {font-weight: bolder;font-size: 30px}
-        ul.fs2 {font-weight: bold;font-size: 25px}
-        ul.fs3 {font-weight: normal;font-size: 20px}
-        ul.fs4 {font-weight: normal;font-size: 15px}
-
     </style>
 </head>
 <body>
+
 
 <div class="container">
     <nav class="navbar navbar-inverse">
@@ -60,18 +67,18 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="project.html">研究計畫</a></li>
-                <li><a href="teach.html">教授課程</a></li>
-                <li><a href="resume.html">簡歷</a></li>
-                <li class="active"><a href="subject.html">學術</a></li>
-                <li><a href="book.html">著作</a></li>
-                <li><a href="student.html">學生</a></li>
-                <li><a href="link.html">常用連結</a></li>
-                <li><a href="reference.html">參考期刊</a></li>
+                <li><a href="index.php">首頁</a></li>
+                <li><a href="project.php">研究計畫</a></li>
+                <li><a href="teach.php">教授課程</a></li>
+                <li><a href="resume.php">簡歷</a></li>
+                <li class="active"><a href="subject.php">學術</a></li>
+                <li><a href="book.php">著作</a></li>
+                <li><a href="student.php">學生</a></li>
+                <li><a href="link.php">常用連結</a></li>
+                <li><a href="reference.php">參考期刊</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="logout.php"> Logout</a></li>
             </ul>
         </div>
     </nav>

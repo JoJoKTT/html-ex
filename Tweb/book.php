@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+if(isset($_SESSION['email']) && $_SESSION['email']!=""){
+}else{
+    echo "Please Login first";
+    header("refresh:2;url=index.html");  //轉址
+    exit(); //不執行之後的程式碼
+}
+include("db_con_inc.php");
+?>
 <head>
     <title>著作</title>
     <meta charset="utf-8">
@@ -15,9 +25,7 @@
         }
 
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {
-            height: 450px
-        }
+        .row.content {height: 450px}
 
         /* Set gray background color and 100% height */
         .sidenav {
@@ -39,10 +47,7 @@
                 height: auto;
                 padding: 15px;
             }
-
-            .row.content {
-                height: auto;
-            }
+            .row.content {height:auto;}
         }
     </style>
 </head>
@@ -61,23 +66,26 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="project.html">研究計畫</a></li>
-                <li><a href="teach.html">教授課程</a></li>
-                <li><a href="resume.html">簡歷</a></li>
-                <li><a href="subject.html">學術</a></li>
-                <li class="active"><a href="book.html">著作</a></li>
-                <li><a href="student.html">學生</a></li>
-                <li><a href="link.html">常用連結</a></li>
-                <li><a href="reference.html">參考期刊</a></li>
+                <li><a href="index.php">首頁</a></li>
+                <li><a href="project.php">研究計畫</a></li>
+                <li><a href="teach.php">教授課程</a></li>
+                <li><a href="resume.php">簡歷</a></li>
+                <li><a href="subject.php">學術</a></li>
+                <li class="active"><a href="book.php">著作</a></li>
+                <li><a href="student.php">學生</a></li>
+                <li><a href="link.php">常用連結</a></li>
+                <li><a href="reference.php">參考期刊</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="logout.php"> Logout</a></li>
             </ul>
         </div>
     </nav>
 </div>
-
+<?php
+$sql = "SELECT * FROM `book`";
+$result = mysqli_query($connect,$sql);
+?>
 <div class="container text-center">
     <div class="col-sm-12 text-center">
 
@@ -97,6 +105,27 @@
         </nav>
         <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
+                <?php $pi="SELECT * FROM `book` WHERE id=$row[0]";
+                $res = mysqli_query($connect,$pi);
+                $col = mysqli_fetch_array($res); ?>
+                <?php   while ($row = mysqli_fetch_array($result,MYSQLI_BOTH)) {
+                    echo '<ul style="list-style: decimal;text-align: left">';
+                    echo '<li>'.$row[1].'<br>'.$row[2].'<br>'.$row[3].','.$row[4].'doi: '.$row[5].' , '.$row[6]
+                    .' , '.$row[7].' , '.$row[8].' ,  '.$row[9];?>
+                    <form method="post" action="editbook.php" style="margin: 0; padding: 0;display: inline">
+    <input style="display: inline;"type="submit" value="修改" />
+    <input style="display: inline;"name="pi" type="hidden" value="<?php echo $col[0] ?>" />
+</form>
+<form method="post" action="delbook.php" style="margin: 0; padding: 0;display: inline">
+    <input style="display: inline;"type="submit" value="刪除" />
+    <input style="display: inline;"name="pi" type="hidden" value="<?php echo $col[0] ?>" />
+</form>
+               <?php }?>
+
+                <form method="post" action="wbook.php" style="margin: 0; padding: 0;">
+                    <input style="display: inline; width: 750px;height: 35px"type="submit" value="新增" />
+                </form>
+
                 <ul style="list-style: decimal;text-align: left">
                     <li><a href="http://www.mdpi.com/2076-3417/7/9/878" target="_blank">A Novel Approach to Extract
                         Significant Time Interval Patterns of Vehicles from Freeway Gantry Timestamp Sequences</a><br>

@@ -2,7 +2,6 @@
 <head><title>Login</title>
 </head>
 <body>
-
 <form name="form" method="post" action="actionlogin.php">
     帳號：<input type="text" name="id" /> <br>
     密碼：<input type="password" name="pw" /> <br>

@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+if(isset($_SESSION['email']) && $_SESSION['email']!=""){
+}else{
+    echo "Please Login first";
+    header("refresh:2;url=index.html");  //轉址
+    exit(); //不執行之後的程式碼
+}
+include("db_con_inc.php");
+?>
 <head>
-    <title>首頁</title>
+    <title>參考期刊</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/tweb.css" charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -57,40 +67,31 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">首頁</a></li>
-                <li><a href="project.html">研究計畫</a></li>
-                <li><a href="teach.html">教授課程</a></li>
-                <li><a href="resume.html">簡歷</a></li>
-                <li><a href="subject.html">學術</a></li>
-                <li><a href="book.html">著作</a></li>
-                <li><a href="student.html">學生</a></li>
-                <li><a href="link.html">常用連結</a></li>
-                <li><a href="reference.html">參考期刊</a></li>
+                <li><a href="index.php">首頁</a></li>
+                <li><a href="project.php">研究計畫</a></li>
+                <li><a href="teach.php">教授課程</a></li>
+                <li><a href="resume.php">簡歷</a></li>
+                <li><a href="subject.php">學術</a></li>
+                <li><a href="book.php">著作</a></li>
+                <li><a href="student.php">學生</a></li>
+                <li><a href="link.php">常用連結</a></li>
+                <li class="active"><a href="reference.php">參考期刊</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"> Login</span></a></li>
+                <li><a href="logout.php"> Logout</a></li>
             </ul>
         </div>
     </nav>
 </div>
 
-<div class="container-fluid text-center">
-    <div class="container">
-        <div class="col-sm-9 text-center">
-            <h1>王經篤</h1>
-            <h2>亞洲大學</h2>
-            <h3>資訊工程系</h3>
-            <h4>副教授</h4>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img src="910100540_jdwang_2011_12_7.jpg" width="150px" height="200px">
-        </div>
+<div class="container text-center">
+    <div class="col-sm-12 text-center">
+        <ul>
+            <li><a href="http://www.editorialmanager.com/dami/" target="_blank">Data Mining and Knowledge Discovery (SCI) </a></li>
+            <li><a href="" target="_blank"></a></li>
+        </ul>
     </div>
 </div>
-
-<form>
-    <input type="button" value="name test" onClick="var name=prompt('名字是?','name here');alert('hi , '+name)">
-</form>
 
 <footer class="container text-center">
     <p>地址：41354 台中市霧峰區柳豐路500號<br/>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>首頁</title>
+    <title>教授課程</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/tweb.css" charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
@@ -44,7 +43,6 @@
 </head>
 <body>
 
-
 <div class="container">
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
@@ -57,9 +55,9 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">首頁</a></li>
+                <li><a href="index.html">首頁</a></li>
                 <li><a href="project.html">研究計畫</a></li>
-                <li><a href="teach.html">教授課程</a></li>
+                <li class="active"><a href="teach.html">教授課程</a></li>
                 <li><a href="resume.html">簡歷</a></li>
                 <li><a href="subject.html">學術</a></li>
                 <li><a href="book.html">著作</a></li>
@@ -68,29 +66,32 @@
                 <li><a href="reference.html">參考期刊</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"> Login</span></a></li>
+                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </nav>
 </div>
 
-<div class="container-fluid text-center">
-    <div class="container">
-        <div class="col-sm-9 text-center">
-            <h1>王經篤</h1>
-            <h2>亞洲大學</h2>
-            <h3>資訊工程系</h3>
-            <h4>副教授</h4>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img src="910100540_jdwang_2011_12_7.jpg" width="150px" height="200px">
-        </div>
+<div class="container text-center">
+    <div class="col-sm-12 text-center">
+        <h1>研究計畫</h1>
+        <hr>
+        <ul>
+            <li>106 學年度 上學期</li>
+            <ul>
+                <li><a href="http://dns2.asia.edu.tw/~jdwang/TeachingCourses/WindowProgramming/106_1_WindowProgramming.html" target="_blank">視窗程式設計(資工系 資電組)(大二必修)</a></li>
+                <li><a href="http://dns2.asia.edu.tw/~jdwang/TeachingCourses/CloudComputing/106_1_cloud_computing.html" target="_blank">雲端計算(生資系)(大三必修)</a></li>
+                <li><a href="http://dns2.asia.edu.tw/~jdwang/TeachingCourses/ComputerProgramming/106_1_ComputerProgramming.html" target="_blank">程式設計(二) (資工系)(大二必修)(重修班)</a></li>
+                <li><a href="http://dns2.asia.edu.tw/~jdwang/TeachingCourses/Python/106_1_Python.html" target="_blank">Python 程式設計 (健康產業資訊專案管理人員就業學程課程)</a></li>
+                <li><a href="http://www.ewant.org/admin/tool/mooccourse/allcourses.php?method=0&search=%E5%A4%A7%E6%95%B8%E6%93%9A%E8%B3%87%E6%96%99%E8%99%95%E7%90%86&schoolid=0&categoryid=0&filter=0" target="_blank">(ewant)亞洲大學 大數據資料處理–Hadoop MapReduce 程式設計與資料視覺化</a> 教師: 王經篤,何承遠</li>
+                <ul>
+                    <li><a href="http://dns2.asia.edu.tw/~jdwang/TeachingCourses/Hadoop/BigData_Hadoop_Outline.html" target="_blank">(Asis University)亞洲大學 大數據資料處理 –Hadoop MapReduce 程式設計</a></li>
+                </ul>
+            </ul>
+            <br>
+        </ul>
     </div>
 </div>
-
-<form>
-    <input type="button" value="name test" onClick="var name=prompt('名字是?','name here');alert('hi , '+name)">
-</form>
 
 <footer class="container text-center">
     <p>地址：41354 台中市霧峰區柳豐路500號<br/>
